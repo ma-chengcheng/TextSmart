@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import {ArrowRightOutlined} from '@ant-design/icons-vue';
+// import {ArrowRightOutlined} from '@ant-design/icons-vue/icons-vue.vue';
 </script>
 
 <style scoped>
