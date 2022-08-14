@@ -11,4 +11,7 @@
 ## Tools
 
 ## Dashboard
-
+```shell
+make build
+make run
+```
