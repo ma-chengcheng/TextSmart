@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "commitmsg": "commitlint -e $GIT_PARAMS"
   },
   "dependencies": {
     "ant-design-vue": "^3.2.11",
