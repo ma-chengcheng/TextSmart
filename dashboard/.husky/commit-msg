@@ -1,5 +1,5 @@
 #!/bin/sh
-echo '1111'
-# . "$(dirname "$0")/_/husky.sh"
+. "$(dirname "$0")/_/husky.sh"
 
-# npx commitlint --edit "$1"
+npx commitlint --edit "$1"
+npx --no-install commitlint --edit "$1"
