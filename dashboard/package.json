@@ -6,7 +6,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "commitmsg": "commitlint -e $GIT_PARAMS"
+    "lint:fix": "eslint --fix src/*"
   },
   "dependencies": {
     "ant-design-vue": "^3.2.11",
@@ -48,6 +48,6 @@
   },
   "lint-staged": {
     "commit-msg": "commitlint -E $HUSKY_GIT_PARAMS",
-    "pre-commit": "npm run lint:fix"
+    "pre-commit": "npm run lint"
   }
 }
