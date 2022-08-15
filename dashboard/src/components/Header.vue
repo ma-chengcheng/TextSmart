@@ -13,9 +13,9 @@
 export default {
   data() {
     return {
-      current: ["text_analysis"]
+      current: ['text_analysis'],
     }
-  }
+  },
 }
 </script>
 

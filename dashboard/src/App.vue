@@ -1,7 +1,7 @@
-<script setup>
-import Header from "./components/Header.vue";
-import TextAnalysis from "./components/TextAnalysis.vue";
-import Tools from "./components/Tools.vue";
+<!-- <script setup>
+import Header from './components/Header.vue'
+import TextAnalysis from './components/TextAnalysis.vue'
+import Tools from './components/Tools.vue'
 </script>
 
 <template>
@@ -9,7 +9,7 @@ import Tools from "./components/Tools.vue";
     <Header/>
     <a-layout-content id="content">
       <TextAnalysis/>
-<!--      <Tools/>-->
+     <Tools/>
     </a-layout-content>
   </a-layout>
 </template>
@@ -19,4 +19,13 @@ import Tools from "./components/Tools.vue";
   background: white;
   padding: 20px 50px;
 }
+</style> -->
+<script setup>
+</script>
+
+<template>
+  <router-view/>
+</template>
+
+<style scoped>
 </style>

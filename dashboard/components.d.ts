@@ -31,6 +31,8 @@ declare module '@vue/runtime-core' {
     IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
     IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     TextAnalysis: typeof import('./src/components/TextAnalysis.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
     Tools: typeof import('./src/components/Tools.vue')['default']
