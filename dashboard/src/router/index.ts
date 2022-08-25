@@ -1,11 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router';
-const User = {
-    template: '<div>User scsac</div>',
-  }
+// import Header from '@/layout/Header.vue';
+// const routes = [
+//   { path: '/', name: 'analysis', children: [
+//     {
+//       path: '',
+//       component: ()=>import('@/views/Analysis.vue'),
+//     },
+//   ], component: Header },
+//   { path: '/tool', name: 'tool', children: [
+//     {
+//       path: '',
+//       component: ()=>import('@/views/Analysis.vue'),
+//     },
+//   ], component: Header },
+//   { path: '/*', name: '', component: ()=>import('@/views/Analysis.vue') },
+// ]
 const routes = [
-  { path: '/', component: ()=>import('@/views/index.vue') },
-// { path: '/', component: User },
-
+  { path: '/', name: 'analysis',  component: ()=>import('@/views/Analysis.vue') },
+  { path: '/tool', name: 'tool',  component: ()=>import('@/views/Tools.vue') },
+  { path: '/*', name: '', component: ()=>import('@/views/Analysis.vue') },
 ]
 
 const router = createRouter({
