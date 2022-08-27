@@ -1,0 +1,34 @@
+{
+    "data":[
+        {
+            "word":"好好",
+            "phoneme":"hao3 hao3",
+            "normalize_type":"SELF SELF"
+        },
+        {
+            "word":"学习",
+            "phoneme":"xue2 xi2",
+            "normalize_type":"SELF SELF"
+        },
+        {
+            "word":"，",
+            "phoneme":"",
+            "normalize_type":"PUNC"
+        },
+        {
+            "word":"天天",
+            "phoneme":"tian1 tian1",
+            "normalize_type":"SELF SELF"
+        },
+        {
+            "word":"向上",
+            "phoneme":"xiang4 shang4",
+            "normalize_type":"SELF SELF"
+        },
+        {
+            "word":"。",
+            "phoneme":"",
+            "normalize_type":"PUNC"
+        }
+    ]
+}

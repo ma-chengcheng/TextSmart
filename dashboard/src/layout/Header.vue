@@ -3,9 +3,9 @@
     <a-menu-item key="analysis">
       Text Analysis
     </a-menu-item>
-    <a-menu-item key="tool">
+    <!-- <a-menu-item key="tool">
       Tools
-    </a-menu-item>
+    </a-menu-item> -->
   </a-menu>
   <!-- <router-view></router-view> -->
 </template>
