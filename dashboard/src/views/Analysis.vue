@@ -1,13 +1,11 @@
 <script setup>
 import TextAnalysis from '@/components/TextAnalysis.vue'
-import Tools from '@/components/Tools.vue'
 </script>
 
 <template>
   <a-layout>
     <a-layout-content id="content">
       <TextAnalysis/>
-     <Tools/>
     </a-layout-content>
   </a-layout>
 </template>
