@@ -7,56 +7,42 @@ export default defineComponent(() => ({
 </script>
 
 <template>
-  <nav
-    class="dragging"
-    flex="~ gap4 none"
-    p4 relative bg-base z-10 border="b base" text-xl
-    :class="$route.path !== '/' ? 'md:hidden' : ''"
-  >
-    <!-- In Collections -->
-    <template v-if="$route.path !== '/'">
-      <div
-        class="non-dragging"
-        icon-button flex-none
-        i-carbon:arrow-left
-        @click="$router.replace('/')"
-      />
-    </template>
-
-    <!-- Homepage Only -->
-    <template v-else>
+  <nav class="dragging">
+    <div class="left-header">
       <RouterLink
         class="non-dragging"
-        i-carbon:search icon-button flex-none
-        to="/collection/all"
-      />
-      <div flex-auto />
-      <h1
-        absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center
-        text-xl font-light tracking-2px pointer-events-none
+        to="/"
       >
-        Icônes
-      </h1>
+        <h1>
+          Text Analysis
+        </h1>
+      </RouterLink>
+      <RouterLink
+        class="non-dragging"
+        to="/"
+      >
+        <h1>
+          222Text Analysis2222
+        </h1>
+      </RouterLink>
+    </div>
+    <div>
       <a
         class="non-dragging"
-        i-carbon-logo-github icon-button flex-none
-        href="https://github.com/antfu/icones"
+        href="https://github.com/vtuber-project/TextSmart/issues"
         target="_blank"
       />
-      <DarkSwitcher flex-none />
-    </template>
-
-    <!-- Searching -->
-    <div v-if="collection" class="flex">
-      <form action="/collection/all" role="search" method="get" @submit.prevent>
-        <input
-          v-model="search"
-          aria-label="Search"
-          class="color-base text-base outline-none py-2 px-4 flex-auto m-0 w-full bg-transparent"
-          name="s"
-          placeholder="Search..."
-        >
-      </form>
+      <DarkSwitcher />
     </div>
   </nav>
 </template>
+
+<style>
+.dragging {
+  display: flex;
+  justify-content: space-between;
+}
+.left-header {
+  display: flex;
+}
+</style>

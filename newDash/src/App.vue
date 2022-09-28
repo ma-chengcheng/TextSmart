@@ -7,10 +7,14 @@ const style = computed<any>(() => ({
 </script>
 
 <template>
-  <div class="flex flex-col h-screen overflow-hidden bg" :style="style">
-    <div class="h-full flex-auto overflow-overlay">
-      <RouterView />
-    </div>
-    <Progress />
+  <div class="app" :style="style">
+    <RouterView />
   </div>
 </template>
+
+<style>
+.app {
+  overflow: hidden;
+  background-color: white;
+}
+</style>

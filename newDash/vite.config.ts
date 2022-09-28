@@ -1,4 +1,3 @@
-import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
@@ -31,8 +30,8 @@ export default defineConfig({
     __BUILD_TIME__: JSON.stringify(dayjs().format('YYYY/MM/DD HH:mm')),
   },
   resolve: {
-    alias: {
-      
-    },
+    // alias: {
+
+    // },
   },
 })

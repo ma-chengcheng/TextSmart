@@ -1,5 +1,4 @@
 <script setup lang='ts'>
-import { isElectron } from '../env'
 </script>
 
 <template>
