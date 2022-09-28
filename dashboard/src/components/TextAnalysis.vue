@@ -18,19 +18,25 @@
     </a-form>
     <a-divider>Results</a-divider>
     <div class="search-result">
-      <a-checkbox-group v-model:value="checkList">
+      <a-checkbox-group v-model:value="checkList" :options="checkboxTable">
+        <template #label="{ value, labelColor }">
+          <span :style="'color:' + labelColor">{{ value }}</span>
+        </template>
+      </a-checkbox-group>
+      <!-- old
+        <a-checkbox-group v-model:value="checkList">
         <a-row>
           <a-col :span="6.5" v-for="item in checkboxTable" v-bind:key="item.value">
             <a-checkbox :disabled="item.disabled" :value="item.value" :style="{'color': item.labelColor}">{{item.label}}</a-checkbox>
           </a-col>
         </a-row>
-      </a-checkbox-group>
+      </a-checkbox-group> -->
       <div class="search-result-list" v-for="(aniItemList, index) in mockData" :key="index">
-        <div class="text-block" v-for="(aniItemWord, index) in aniItemList" :class="!checkList.includes(2) && 'is-word-segmentation'" :key="index">
+        <div class="text-block" v-for="(aniItemWord, index) in aniItemList" :class="checkList.includes('Word segmentation') && 'is-word-segmentation'" :key="index">
           <div v-for="(aniItem, index) in aniItemWord" class="single-block" :key="index">
-            <div class="phoneme" v-show="checkList.includes(1)">{{aniItem.phoneme}}</div>
+            <div class="phoneme" :class="!checkList.includes('Grapheme-to-phoneme') && 'is-hidden-block'">{{aniItem.phoneme}}</div>
             <div class="word">{{aniItem.char}}</div>
-            <div class="normalize_type" v-show="checkList.includes(3)">{{aniItem.normalize_type}}</div>
+            <div class="normalize_type" :class="!checkList.includes('Text normalization') && 'is-hidden-block'">{{aniItem.normalize_type}}</div>
           </div>
         </div>
       </div>
@@ -52,12 +58,21 @@ const activeKey = ref('TextareInputText')
 
 // block-checkout logic
 const checkboxTable = [
-  { label: 'Grapheme-to-phoneme', value: 1, labelColor: '#ff9016', disabled: false },
-  { label: 'Word segmentation', value: 2, labelColor: '', disabled: false },
-  { label: 'Text normalization', value: 3, labelColor: '#ed3023', disabled: false },
-  { label: 'Prosody prediction', value: 4, labelColor: '', disabled: true }
+  // old
+  // { label: 'Grapheme-to-phoneme', value: 1, labelColor: '#ff9016', disabled: false },
+  // { label: 'Word segmentation', value: 2, labelColor: '', disabled: false },
+  // { label: 'Text normalization', value: 3, labelColor: '#ed3023', disabled: false },
+  // { label: 'Prosody prediction', value: 4, labelColor: '', disabled: true }
+  { value: 'Grapheme-to-phoneme', labelColor: '#ff9016', disabled: false },
+  { value: 'Word segmentation', labelColor: '', disabled: false },
+  { value: 'Text normalization', labelColor: '#ed3023', disabled: false },
+  { value: 'Prosody prediction', labelColor: '', disabled: true }
+
 ]
-const checkList = ref([1, 2, 3])
+// old
+// const checkList = ref([1, 2, 3])
+const checkList = ref(['Grapheme-to-phoneme', 'Word segmentation', 'Text normalization'])
+
 watch(checkList, (newVal, oldVal) => {
   console.log(newVal, oldVal)
 })
@@ -177,8 +192,9 @@ const mockData = [
 }
 .text-block {
   display: flex;
-  border-right: 1px solid #ccc;
   flex: 0 0 200px;
+  justify-content: center;
+  box-sizing: border-box;
 }
 .phoneme {
   color: #ff9016;
@@ -199,8 +215,21 @@ const mockData = [
   text-align: center;
   max-width: 100px;
   flex: 1;
+  min-height: 70px;
+}
+.is-hidden-block {
+  visibility: hidden;
 }
 .is-word-segmentation {
-  border-right: none;
+  position: relative;
 }
+/* 使用伪元素的方法加线, 避免取消选中时跳动 */
+.is-word-segmentation::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: #ccc;
+    right: 0;
+  }
 </style>
